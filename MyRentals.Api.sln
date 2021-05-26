@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRentals.Api.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentals.Api.Persistence", "MyRentals.Api.Persistence\MyRentals.Api.Persistence.csproj", "{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentals.Api.Infrastructure", "MyRentals.Api.Infrastructure\MyRentals.Api.Infrastructure.csproj", "{3029C871-0E6E-4DA4-8535-B820B1799183}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3029C871-0E6E-4DA4-8535-B820B1799183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3029C871-0E6E-4DA4-8535-B820B1799183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3029C871-0E6E-4DA4-8535-B820B1799183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3029C871-0E6E-4DA4-8535-B820B1799183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{F18A1D9B-C7ED-4AA4-9231-C3C1A920245C} = {69234D59-3AE4-4F83-B857-715FEBC7421D}
 		{AD3BDF79-2B6C-4562-8ED5-011BA8B856EC} = {69234D59-3AE4-4F83-B857-715FEBC7421D}
 		{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1} = {9FB40BC5-4E75-4459-AE37-B8A192839543}
+		{3029C871-0E6E-4DA4-8535-B820B1799183} = {9FB40BC5-4E75-4459-AE37-B8A192839543}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1277FDF3-39A1-4120-8BCB-3E74ED35F2F4}
