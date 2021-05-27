@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentals.Api.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentals.Api", "MyRentals.Api\MyRentals.Api.csproj", "{82838F0F-2026-4095-8C4B-1F4CBC34AA3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRentals.Api.Application.UnitTest", "MyRentals.Api.Application.UnitTest\MyRentals.Api.Application.UnitTest.csproj", "{93065465-AFEB-4126-8CD5-C512E8C17AAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{82838F0F-2026-4095-8C4B-1F4CBC34AA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82838F0F-2026-4095-8C4B-1F4CBC34AA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82838F0F-2026-4095-8C4B-1F4CBC34AA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93065465-AFEB-4126-8CD5-C512E8C17AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93065465-AFEB-4126-8CD5-C512E8C17AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93065465-AFEB-4126-8CD5-C512E8C17AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93065465-AFEB-4126-8CD5-C512E8C17AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{1324FBAE-F0C7-4D7B-9229-C3F3DA4A93A1} = {9FB40BC5-4E75-4459-AE37-B8A192839543}
 		{3029C871-0E6E-4DA4-8535-B820B1799183} = {9FB40BC5-4E75-4459-AE37-B8A192839543}
 		{82838F0F-2026-4095-8C4B-1F4CBC34AA3D} = {2EFBB71C-376D-49A3-AD38-A1A79BA9FD34}
+		{93065465-AFEB-4126-8CD5-C512E8C17AAB} = {ECF39FF7-D34B-4762-B073-ED93EF9494A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1277FDF3-39A1-4120-8BCB-3E74ED35F2F4}
