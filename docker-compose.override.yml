@@ -5,6 +5,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - "ConnectionStrings:RentsCoreDbConnectionString=Host=rentscoredb;Database=RentsCoreDB;Username=admin;Password=admin1234"  
     ports:
       - "80"
       - "443"
@@ -21,7 +22,7 @@ services:
     ports:
        - "5050:80"
     volumes:
-       - portainer_data:/root/.pgadmin
+       - pgadmin_data:/root/.pgadmin
 
   rentscoredb:
     container_name: rentscoredb

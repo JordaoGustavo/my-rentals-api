@@ -13,6 +13,6 @@ services:
   rentscoredb:
     image: postgres
 
-  volumes:
-    pgadmin_data:
-    postgres_data:
+volumes:
+  pgadmin_data:
+  postgres_data:
