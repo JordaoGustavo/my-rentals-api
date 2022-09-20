@@ -7,7 +7,8 @@
     <RootNamespace>my_rentals.API</RootNamespace>
     <UserSecretsId>160d1ef8-3956-4592-84b1-6053ecbf4fac</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>.</DockerfileContext>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

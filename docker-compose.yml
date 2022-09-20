@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  my-rentals.api:
+    image: ${DOCKER_REGISTRY-}myrentalsapi
+    build:
+      context: .
+      dockerfile: src/my-rentals.API/Dockerfile
+
+  pgadmin:
+    image: dpage/pgadmin4
+
+  rentscoredb:
+    image: postgres
+
+  volumes:
+    pgadmin_data:
+    postgres_data:
