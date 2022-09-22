@@ -7,13 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Features\Owner\Commands\" />
     <Folder Include="Features\Owner\Queries\" />
-    <Folder Include="Features\Property\Commands\" />
     <Folder Include="Features\Property\Queries\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LanguageExt.Core" Version="4.2.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\my-rentals.Domain\my-rentals.Domain.csproj" />
   </ItemGroup>
 
 </Project>
