@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LanguageExt.Common;
+using System;
 
 namespace my_rental.Domain.Commons
 {
-    public class Entity
+    public class Entity<T>
     {
         public Guid Id { get; protected set; }
 
@@ -13,6 +14,10 @@ namespace my_rental.Domain.Commons
         public string LastModifiedBy { get; set; }
 
         public DateTime? LastModifiedDate { get; set; }
+
+        public Result<T> OperationResult;
+
+        public bool IsSuccess => OperationResult.IsSuccess;
 
         public Entity()
         {

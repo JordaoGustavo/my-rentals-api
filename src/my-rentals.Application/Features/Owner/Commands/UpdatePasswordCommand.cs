@@ -6,5 +6,6 @@ namespace my_rentals.Application.Features.Owner.Commands
     {
         public Guid OwnerId { get; set; }
         public string NewPassword { get; set; }
+        public string OldPassword { get; set; }
     }
 }
