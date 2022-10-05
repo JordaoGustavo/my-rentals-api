@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Owner\Queries\" />
-    <Folder Include="Features\Property\Queries\" />
+    <Folder Include="Features\OwnerFeature\Queries\" />
+    <Folder Include="Features\PropertyFeature\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -18,6 +18,11 @@ namespace my_rentals.Application.Services
 
         public async Task<Result<Owner>> ChangeNameAsync(ChangeOwnerNameCommand changeOwnerNameCommand)
         {
+            if (changeOwnerNameCommand is null)
+            {
+                return new Result<Owner>(new InvalidDomainOperationException("Operação inválida"));
+            }
+
             var owner = await _ownerRepository.FindOneAsync(o => o.Id == changeOwnerNameCommand.OwnerId);
 
             if (owner is null)
@@ -107,16 +112,16 @@ namespace my_rentals.Application.Services
 
         public async Task<Result<Owner>> GetAsync(Guid id)
         {
-            var owner = await _ownerRepository.FindOneAsync(o => o.Id == id);
+                var owner = await _ownerRepository.FindOneAsync(o => o.Id == id);
 
-            if (owner is null)
-            {
-                return new Result<Owner>(new NotFoundException("Proprietário não encontrado!"));
-            }
+                if (owner is null)
+                {
+                    return new Result<Owner>(new NotFoundException("Proprietário não encontrado!"));
+                }
 
-            owner.HidePassword();
+                owner.HidePassword();
 
-            return owner;
+                return owner;
         }
     }
 }

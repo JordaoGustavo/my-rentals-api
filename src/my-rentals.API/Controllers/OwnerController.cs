@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using my_rentals.API.Extentions;
+using my_rentals.Application.Contracts.Services;
+using my_rentals.Application.Features.Owner.Commands;
+using my_rentals.Application.Features.OwnerFeature.ViewModels;
 using System.Net;
 
 namespace my_rentals.API.Controllers
@@ -7,44 +11,68 @@ namespace my_rentals.API.Controllers
     [Route("api/v1/owners")]
     public class OwnerController : ControllerBase
     {
-        [HttpGet("{id}")]
-        [ProducesResponseType(typeof(object), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Get(Guid id)
+        private readonly IOwnerService _ownerService;
+
+        public OwnerController(IOwnerService ownerService)
         {
-            return Ok();
+            _ownerService = ownerService;
+        }
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(OwnerViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Get([FromRoute] Guid id)
+        {
+            var owner = await _ownerService.GetAsync(id);
+
+            return owner.ToOk((owner) => OwnerViewModel.Create(owner));
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(object), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(OwnerViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Create(Guid id)
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        public async Task<IActionResult> Create([FromBody] CreateOwnerCommand ownerCommand)
         {
-            return Ok();
+            var owner = await _ownerService.CreateAsync(ownerCommand);
+
+            return owner.ToOk((owner) => OwnerViewModel.Create(owner));
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(object), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(OwnerViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Update(Guid id)
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] ChangeOwnerNameCommand changeOwnerNameCommand)
         {
-            return Ok();
+            changeOwnerNameCommand.OwnerId = id;
+
+            var owner = await _ownerService.ChangeNameAsync(changeOwnerNameCommand);
+
+            return owner.ToOk((owner) => OwnerViewModel.Create(owner));
         }
 
         [HttpPut("{id}/password")]
-        [ProducesResponseType(typeof(object), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(OwnerViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> ChangePassword(Guid id)
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        public async Task<IActionResult> ChangePassword([FromRoute] Guid id, [FromBody] UpdatePasswordCommand updatePasswordCommand)
         {
-            return Ok();
+            updatePasswordCommand.OwnerId = id;
+
+            var owner = await _ownerService.ChangePasswordAsync(updatePasswordCommand);
+
+            return owner.ToOk((owner) => OwnerViewModel.Create(owner));
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(object), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(OwnerViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> LeavePlatform(Guid id)
+        public async Task<IActionResult> LeavePlatform([FromRoute] Guid id)
         {
-            return Ok();
+            var owner = await _ownerService.DeleteAsync(id);
+
+            return owner.ToOk((owner) => OwnerViewModel.Create(owner));
         }
     }
 }

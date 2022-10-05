@@ -2,6 +2,8 @@
 {
     public class PatchPropertyCommand
     {
+        public Guid PropertyId { get; set; }
+
         public string Name { get; set; }
     }
 }

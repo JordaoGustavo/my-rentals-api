@@ -1,8 +1,6 @@
 ﻿using LanguageExt.Common;
 using my_rental.Domain.Entities;
 using my_rentals.Application.Features.Owner.Commands;
-using System;
-using System.Threading.Tasks;
 
 namespace my_rentals.Application.Contracts.Services
 {
