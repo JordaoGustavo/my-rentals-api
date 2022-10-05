@@ -1,11 +1,11 @@
 version: '3.4'
 
 services:
-  my-rentals.api:
-    image: ${DOCKER_REGISTRY-}myrentalsapi
-    build:
-      context: .
-      dockerfile: src/my-rentals.API/Dockerfile
+  #my-rentals.api:
+  #  image: ${DOCKER_REGISTRY-}myrentalsapi
+  #  build:
+  #    context: .
+  #    dockerfile: src/my-rentals.API/Dockerfile
 
   pgadmin:
     image: dpage/pgadmin4

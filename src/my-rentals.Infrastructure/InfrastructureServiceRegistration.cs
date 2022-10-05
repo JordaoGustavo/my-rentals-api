@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using my_rentals.Application.Contracts.Repositories;
 using my_rentals.Infrastructure.Persistence;
+using my_rentals.Infrastructure.Repositories;
 
 namespace my_rentals.Infrastructure
 {
@@ -11,6 +13,9 @@ namespace my_rentals.Infrastructure
         {
             services.AddDbContext<RentsCoreDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("RentsCoreDbConnectionString")));
+
+            services.AddTransient<IOwnerRepository, OwnerRepository>();
+            services.AddTransient<IPropertyRepository, PropertyRepository>();
 
             return services;
         }
